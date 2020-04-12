@@ -33,11 +33,11 @@ If you successfully sign in you should see more options. Or press `?`.
 
 ![Default options](./docs/start_options2.png)
 
-You have 3 options to start your project
+You have few options to start your project
 - `w` - it will open the UI in your default browser
 - `a` - it should start the application in the Android device.
   - You can choose either physical device connected with USB. You need to enable developer mode and USB debugging.
-  - You can choose Android emulator. Before you choose the this options. Make sure you have installed [Android tools and your emulated device is started](https://docs.expo.io/versions/v37.0.0/workflow/android-studio-emulator/#step-2-set-up-a-virtual-device) and your *Android virtual device (AVD)* is running. Otherwise you will get an error, because it is not able to start the emulator automatically.
+  - You can choose Android emulator. Before you choose the this options. Make sure you have installed [Android tools](https://docs.expo.io/versions/v37.0.0/workflow/android-studio-emulator/#step-2-set-up-a-virtual-device) and your *Android virtual device (AVD)* is running. Otherwise you will get an error, because it is not able to start your emulator automatically.
 
 First initialization will take quite a while and you should see a loading indicator in your emulator and the terminal.
 

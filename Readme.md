@@ -52,12 +52,16 @@ Then every change should be visible in few seconds, because of hot reloading.
 *Working with Android device is sometimes buggy. Working with iOS is easier (e.g. autostart of the emulator)*. See [Solving common problems](#solving-common-problems) section.
 
 ## First changes
-TBD
+Just open [Main file](./App.js). Do your changes, save them, wait for the hot reload and profit in your device.
 
 ## Solving common problems
 ### Downloading JavaScript bundle is at 100% for a while
-It might happened that the installation (or hot reloading) froze. Then you need to close the application in the emulator, close it from task manager and rerun from the terminal with `a`.
+It might happened that the installation froze. Then you need to close the application in the emulator, close it from task manager and rerun from the terminal with `a`.
 If it does not help you can restart the bundler with `shitt-r`. Or quit the `yarn start` and start from beginning.
+
+### I do not see my changes
+- Check the error message in the debugging window
+- Hot reload might got frozen. Apply [restarting option](#downloading-javascript-bundle-is-at-100-for-a-while)
 
 ## Additional information
 See [`package.json`](package.json)

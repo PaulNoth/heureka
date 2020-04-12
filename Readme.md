@@ -2,7 +2,7 @@
 
 ## Prerequisites
 1. Create an [Expo account](Expo.io)
-2. install `node_modules`
+2. Install `node_modules`
 ```sh
 npm i
 ```
@@ -36,10 +36,10 @@ If you successfully sign in you should see more options. Or press `?`.
 You have 3 options to start your project
 - `w` - it will open the UI in your default browser
 - `a` - it should start the application in the Android device.
-  - You can choose either physical device connected with USB. You need to enabled developer mode and USB debugging.
-  - You can choose Android emulator. Before you choose the this options. Make sure you have installed [Android tools and your emulated device is started](https://docs.expo.io/versions/v37.0.0/workflow/android-studio-emulator/#step-2-set-up-a-virtual-device). Otherwise you will get an error, because it is not able to start the emulator automatically.
+  - You can choose either physical device connected with USB. You need to enable developer mode and USB debugging.
+  - You can choose Android emulator. Before you choose the this options. Make sure you have installed [Android tools and your emulated device is started](https://docs.expo.io/versions/v37.0.0/workflow/android-studio-emulator/#step-2-set-up-a-virtual-device) and your *Android virtual device (AVD)* is running. Otherwise you will get an error, because it is not able to start the emulator automatically.
 
-First initialization will take quite a while and you should see a loading indicator in your emulator and the terminal
+First initialization will take quite a while and you should see a loading indicator in your emulator and the terminal.
 
 ![App initialization](./docs/starting_android.png)
 
@@ -47,7 +47,7 @@ After this step is complete, you will see the app window.
 
 ![Application initialized](./docs/android_success_first_run.png)
 
-Then every change should be visible in few seconds, because of hot reload.
+Then every change should be visible in few seconds, because of hot reloading.
 
 *Working with Android device is sometimes buggy. Working with iOS is easier (e.g. autostart of the emulator)*. See [Solving common problems](#solving-common-problems) section.
 
@@ -56,8 +56,8 @@ TBD
 
 ## Solving common problems
 ### Downloading JavaScript bundle is at 100% for a while
-It might happened that the installation (or reloading) froze. Then you need to close the application in the emulator, close it from task manager and rerun from the terminal with `a`.
-If it does not help you can restart the bundler with `shit-r`. Or quit the `yarn start` and start from beginning.
+It might happened that the installation (or hot reloading) froze. Then you need to close the application in the emulator, close it from task manager and rerun from the terminal with `a`.
+If it does not help you can restart the bundler with `shitt-r`. Or quit the `yarn start` and start from beginning.
 
 ## Additional information
 See [`package.json`](package.json)

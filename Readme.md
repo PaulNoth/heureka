@@ -57,7 +57,7 @@ Just open [Main file](./App.js). Do your changes, save them, wait for the hot re
 ## Solving common problems
 ### Downloading JavaScript bundle is at 100% for a while
 It might happened that the installation froze. Then you need to close the application in the emulator, close it from task manager and rerun from the terminal with `a`.
-If it does not help you can restart the bundler with `shitt-r`. Or quit the `yarn start` and start from beginning.
+If it does not help you can restart the bundler with `shift-r`. Or quit the `yarn start` and start from beginning.
 
 ### I do not see my changes
 - Check the error message in the debugging window

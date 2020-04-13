@@ -1,4 +1,4 @@
-# *Heureka pre potraviny* - mobilna aplikacia
+# *Heureka pre potraviny* - mobile application
 
 ## Prerequisites
 1. Create an [Expo account](Expo.io)
@@ -34,7 +34,7 @@ If you successfully sign in you should see more options. Or press `?`.
 ![Default options](./docs/start_options2.png)
 
 You have few options to start your project
-- `w` - it will open the UI in your default browser
+- `w` - it will open the UI in your default browser (might be a new feature, since last time I used React native)
 - `a` - it should start the application in the Android device.
   - You can choose either physical device connected with USB. You need to enable developer mode and USB debugging.
   - You can choose Android emulator. Before you choose the this options. Make sure you have installed [Android tools](https://docs.expo.io/versions/v37.0.0/workflow/android-studio-emulator/#step-2-set-up-a-virtual-device) and your *Android virtual device (AVD)* is running. Otherwise you will get an error, because it is not able to start your emulator automatically.
@@ -53,6 +53,11 @@ Then every change should be visible in few seconds, because of hot reloading.
 
 ## First changes
 Just open [Main file](./App.js). Do your changes, save them, wait for the hot reload and profit in your device.
+
+## Material UI
+The basic project uses Material UI library for `react-native` called [`react-native-paper`](https://callstack.github.io/react-native-paper/index.html). An example implementation is contained in [Counter.js file](Counter.js).
+
+![Material UI example](./docs/material_ui_example.png)
 
 ## Solving common problems
 ### Downloading JavaScript bundle is at 100% for a while

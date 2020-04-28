@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
 export default function ShopScreen() {
     return (
         <View style={styles.container}>
-            <Text>Najlacnejsi nakup</Text>
+            <Text>Najlacnejsi produkt</Text>
         </View>
     );
 }

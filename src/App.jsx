@@ -1,7 +1,11 @@
-import React from 'react';
-import { Provider as PaperProvider } from 'react-native-paper';
-import { StyleSheet, Text, View } from 'react-native';
-import Counter from './Counter';
+import React, { useState, useRef } from 'react';
+import { Provider as PaperProvider, Appbar, Button } from 'react-native-paper';
+import {
+  StyleSheet, View,
+} from 'react-native';
+import Swiper from 'react-native-swiper';
+import ProductScreen from './ProductScreen';
+import ShopScreen from './ShopScreen';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,15 +14,46 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  buttonColor: {
+    // borderBottomColor: 'white',
+    // borderBottomWidth: 4,
+    borderTopStartRadius: 0,
+    borderTopEndRadius: 0,
+    borderBottomStartRadius: 0,
+    borderBottomEndRadius: 0,
+    flex: 1,
+  },
+  alignmentButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    padding: 0,
+    marginBottom: 0,
+  },
 });
 
 export default function App() {
   return (
     <PaperProvider>
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+      <Appbar.Header>
+        <Appbar.Content
+          title="Heureka"
+          subtitle="Pre potraviny"
+        />
+      </Appbar.Header>
+      <View style={styles.alignmentButtons}>
+        <Button compact uppercase={false} icon="magnify" mode="contained" style={screenIndex === 0 ? styles.buttonColorActive : styles.buttonColor} onPress={() => onMenuClick(0)}>Najlacnejší produkt</Button>
+        <Button compact uppercase={false} icon="cart-outline" mode="contained" style={screenIndex === 1 ? styles.buttonColorActive : styles.buttonColor} onPress={() => onMenuClick(1)}>Môj nákup</Button>
       </View>
-      <Counter />
+      <Swiper
+        ref={swiperRef}
+        showsPagination={false}
+        loop
+        bounces
+        onIndexChanged={(index) => setSceenIndex(index)}
+      >
+        <ProductScreen />
+        <ShopScreen />
+      </Swiper>
     </PaperProvider>
   );
 }

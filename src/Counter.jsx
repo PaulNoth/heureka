@@ -22,8 +22,6 @@ export default function Counter() {
     </View>
   );
 }
-<<<<<<< HEAD:src/Counter.jsx
-=======
 
 const styles = StyleSheet.create({
   container: {
@@ -33,4 +31,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
->>>>>>> eslint configuration:Counter.js

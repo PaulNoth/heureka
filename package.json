@@ -7,7 +7,7 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "lint": "eslint ./src --ext .js --ext .jsx --color",
-    "lint:fix": "eslint ./src ---ext .js --ext .jsx --color --fix",
+    "lint:fix": "eslint ./src --ext .js --ext .jsx --color --fix",
     "lint:watch": "esw -w --color --ext .js --ext .jsx ./src"
   },
   "dependencies": {

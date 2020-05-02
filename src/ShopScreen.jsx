@@ -2,15 +2,15 @@ import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#ececec',
-  },
+    container: {
+        backgroundColor: '#ececec',
+    },
 });
 
 export default function ShopScreen() {
-  return (
-    <View style={styles.container}>
-      <Text>Nakup</Text>
-    </View>
-  );
+    return (
+        <View style={styles.container}>
+            <Text>Nakup</Text>
+        </View>
+    );
 }

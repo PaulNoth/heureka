@@ -1,6 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Provider as PaperProvider, Appbar, Button } from 'react-native-paper';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet, View,
+} from 'react-native';
 import Swiper from 'react-native-swiper';
 import ProductScreen from './ProductScreen';
 import ShopScreen from './ShopScreen';
@@ -29,7 +31,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     padding: 0,
     marginBottom: 0,
-  }
+  },
 });
 
 export default function App() {
@@ -43,17 +45,23 @@ export default function App() {
 
   return (
     <PaperProvider>
-        <Appbar.Header>
-          <Appbar.Content
-            title="Heureka"
-            subtitle="Pre potraviny"
-          />
-        </Appbar.Header>
+      <Appbar.Header>
+        <Appbar.Content
+          title="Heureka"
+          subtitle="Pre potraviny"
+        />
+      </Appbar.Header>
       <View style={styles.alignmentButtons}>
         <Button compact uppercase={false} icon="magnify" mode="contained" style={screenIndex === 0 ? styles.buttonColorActive : styles.buttonColor} onPress={() => onMenuClick(0)}>Najlacnejší produkt</Button>
         <Button compact uppercase={false} icon="cart-outline" mode="contained" style={screenIndex === 1 ? styles.buttonColorActive : styles.buttonColor} onPress={() => onMenuClick(1)}>Môj nákup</Button>
       </View>
-      <Swiper ref={swiperRef} showsPagination={false} loop={true} bounces={true} onIndexChanged={index => setSceenIndex(index)} >
+      <Swiper
+        ref={swiperRef}
+        showsPagination={false}
+        loop
+        bounces
+        onIndexChanged={(index) => setSceenIndex(index)}
+      >
         <ProductScreen />
         <ShopScreen />
       </Swiper>

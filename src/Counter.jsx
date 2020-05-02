@@ -12,13 +12,25 @@ const styles = StyleSheet.create({
 });
 
 export default function Counter() {
-    const [count, setCount] = useState(0);
-    return (
-        <View style={styles.container}>
-            <Badge>{count}</Badge>
-            <Button mode="contained" onPress={() => setCount(count + 1)}>
-                Increment counter
-            </Button>
-        </View>
-    );
+  const [count, setCount] = useState(0);
+  return (
+    <View style={styles.container}>
+      <Badge>{count}</Badge>
+      <Button mode="contained" onPress={() => setCount(count + 1)}>
+        Increment counter
+      </Button>
+    </View>
+  );
 }
+<<<<<<< HEAD:src/Counter.jsx
+=======
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+>>>>>>> eslint configuration:Counter.js

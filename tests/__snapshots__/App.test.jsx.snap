@@ -20,7 +20,9 @@ exports[`<App/> renders correctly 1`] = `
       }
     }
   >
-    <Text>
+    <Text
+      testID="main-text"
+    >
       Open up App.js to start working on your app!
     </Text>
   </View>

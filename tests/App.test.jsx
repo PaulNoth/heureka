@@ -1,16 +1,16 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-native-testing-library';
 
 import App from '../src/App';
 
 describe('<App/>', () => {
     it('has 1 child', () => {
-        const tree = renderer.create(<App />).toJSON();
+        const tree = render(<App />).toJSON();
         expect(tree.children.length).toBe(2);
     });
 
     it('renders correctly', () => {
-        const tree = renderer.create(<App />).toJSON();
+        const tree = render(<App />).toJSON();
         expect(tree).toMatchSnapshot();
     });
 });

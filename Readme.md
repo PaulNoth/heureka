@@ -59,6 +59,11 @@ The basic project uses Material UI library for `react-native` called [`react-nat
 
 ![Material UI example](./docs/material_ui_example.png)
 
+## Testing
+We use [`react-native-testing-library`](https://github.com/callstack/react-native-testing-library).
+
+See an [example](./tests/App.test.jsx);
+
 ## Solving common problems
 ### Downloading JavaScript bundle is at 100% for a while
 It might happened that the installation froze. Then you need to close the application in the emulator, close it from task manager and rerun from the terminal with `a`.

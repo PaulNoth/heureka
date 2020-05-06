@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { TextInput, IconButton, Colors, Button } from 'react-native-paper';
+import { TextInput, IconButton, DefaultTheme } from 'react-native-paper';
 
 const styles = StyleSheet.create({
     container: {
@@ -30,8 +30,9 @@ export default function ShopScreen() {
                 />
                 <IconButton
                     icon="magnify"
-                    color={Colors.purple500}
+                    color={DefaultTheme.colors.primary}
                     size={40}
+                    animated
                     onPress={() => console.log('Pressed')}
                 />
             </View>

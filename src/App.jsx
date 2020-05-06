@@ -1,25 +1,81 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Provider as PaperProvider } from 'react-native-paper';
+import React, { useState, useRef } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { Provider as PaperProvider, Appbar, Button } from 'react-native-paper';
+import Swiper from 'react-native-swiper';
 
-import Counter from './Counter';
+import ProductScreen from './ProductScreen';
+import ShopScreen from './ShopScreen';
 
 const styles = StyleSheet.create({
-    container: {
+    buttonColorActive: {
+        borderBottomColor: 'white',
+        borderBottomWidth: 4,
+        borderTopStartRadius: 0,
+        borderTopEndRadius: 0,
+        borderBottomStartRadius: 0,
+        borderBottomEndRadius: 0,
         flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+    },
+    buttonColor: {
+        // borderBottomColor: 'white',
+        // borderBottomWidth: 4,
+        borderTopStartRadius: 0,
+        borderTopEndRadius: 0,
+        borderBottomStartRadius: 0,
+        borderBottomEndRadius: 0,
+        flex: 1,
+    },
+    alignmentButtons: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        padding: 0,
+        marginBottom: 0,
     },
 });
 
 export default function App() {
+    const [screenIndex, setSceenIndex] = useState(0);
+
+    const swiperRef = useRef(null);
+
+    const onMenuClick = (index) => {
+        swiperRef.current.scrollBy((screenIndex - index) * -1);
+    };
+
     return (
         <PaperProvider>
-            <View style={styles.container}>
-                <Text>Open up App.js to start working on your app!</Text>
+            <Appbar.Header>
+                <Appbar.Content title="Heureka" subtitle="Pre potraviny" />
+            </Appbar.Header>
+            <View style={styles.alignmentButtons}>
+                <Button
+                    compact
+                    uppercase={false}
+                    icon="magnify"
+                    mode="contained"
+                    style={screenIndex === 0 ? styles.buttonColorActive : styles.buttonColor}
+                    onPress={() => onMenuClick(0)}>
+                    Najlacnejší produkt
+                </Button>
+                <Button
+                    compact
+                    uppercase={false}
+                    icon="cart-outline"
+                    mode="contained"
+                    style={screenIndex === 1 ? styles.buttonColorActive : styles.buttonColor}
+                    onPress={() => onMenuClick(1)}>
+                    Môj nákup
+                </Button>
             </View>
-            <Counter />
+            <Swiper
+                ref={swiperRef}
+                showsPagination={false}
+                loop
+                bounces
+                onIndexChanged={(index) => setSceenIndex(index)}>
+                <ProductScreen />
+                <ShopScreen />
+            </Swiper>
         </PaperProvider>
     );
 }

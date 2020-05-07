@@ -57,7 +57,7 @@ Just open [Main file](./App.js). Do your changes, save them, wait for the hot re
 ## Material UI
 The basic project uses Material UI library for `react-native` called [`react-native-paper`](https://callstack.github.io/react-native-paper/index.html). An example implementation is contained in [Counter.js file](Counter.js).
 
-![Material UI example](./docs/material_ui_example.png)
+![Material UI examples (`react-native-paper`)](https://callstack.github.io/react-native-paper/index.html)
 
 ## Testing
 We use [`react-native-testing-library`](https://github.com/callstack/react-native-testing-library).

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import Autocomplete from 'react-native-autocomplete-input';
-import { TextInput, IconButton, DefaultTheme } from 'react-native-paper';
+import { TextInput, IconButton, DefaultTheme, Divider } from 'react-native-paper';
 
 const styles = StyleSheet.create({
     container: {
@@ -29,31 +29,42 @@ const testData = ['mineralka', 'jogurt', 'mlieko'];
 
 export default function ShopScreen() {
     const [text, setText] = useState(null);
+    const [hidden, setHidden] = useState(true);
+
+    const onTextType = (t) => {
+        if(t.length > 2) {
+            setHidden(false);
+        } else {
+            setHidden(true);
+        }
+        setText(t);
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.container2}>
-                <TextInput
-                    style={styles.textInput}
-                    mode="flat"
-                    placeholder="Hľadaj najlacnejší produkt"
-                    value={text}
-                    onChangeText={(t) => setText(t)}
-                    render={(props) => (
-                        <Autocomplete
-                            style={props.style}
-                            placeholder={props.placeholder}
-                            data={testData}
-                            containerStyle={styles.autocompleteContainer}
-                            renderItem={({ item, i }) => (
-                                <TouchableOpacity
-                                    key={i}
-                                    onPress={() => console.log({ query: item })}>
-                                    <Text>{item}</Text>
-                                </TouchableOpacity>
-                            )}
-                        />
-                    )}
-                />
+                <View style={{ flex: 1 }}>
+                    <Autocomplete
+                        hideResults={hidden}
+                        data={testData}
+                        containerStyle={styles.autocompleteContainer}
+                        renderItem={({ item, i }) => (
+                            <TouchableOpacity key={i} onPress={() => console.log({ query: item })}>
+                                <Text>{item}</Text>
+                            </TouchableOpacity>
+                        )}
+                        // renderSeparator={(props) => <Divider />}
+                        renderTextInput={(props) => (
+                            <TextInput
+                                // style={styles.textInput}
+                                mode="flat"
+                                placeholder="Hľadaj najlacnejší produkt"
+                                value={text}
+                                onChangeText={onTextType}
+                            />
+                        )}
+                    />
+                </View>
                 <IconButton
                     icon="magnify"
                     color={DefaultTheme.colors.primary}

@@ -32,13 +32,13 @@ export default function ShopScreen() {
     const [hidden, setHidden] = useState(true);
 
     const onTextType = (t) => {
-        if(t.length > 2) {
+        if (t.length > 2) {
             setHidden(false);
         } else {
             setHidden(true);
         }
         setText(t);
-    }
+    };
 
     return (
         <View style={styles.container}>

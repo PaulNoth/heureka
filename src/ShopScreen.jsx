@@ -72,6 +72,9 @@ export default function ShopScreen() {
     const removeItem = (item) => {
         setItems(items.filter((i) => i !== item));
         setHidden(true);
+        if (items.length === 0) {
+            setSearched(false);
+        }
     };
 
     const calculateCheapestMerchants = () => {

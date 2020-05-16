@@ -1,8 +1,12 @@
+import _groupBy from 'lodash/groupBy';
+import _sumBy from 'lodash/sumBy';
 import _uniq from 'lodash/uniq';
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import Autocomplete from 'react-native-autocomplete-input';
-import { TextInput, IconButton, DefaultTheme, Chip, Title } from 'react-native-paper';
+import { TextInput, IconButton, DefaultTheme, Chip, Title, DataTable } from 'react-native-paper';
+
+import heurekaData from '../data/heureka.json';
 
 const styles = StyleSheet.create({
     container: {
@@ -39,17 +43,22 @@ const styles = StyleSheet.create({
     },
 });
 
-const testData = ['mineralka', 'jogurt', 'mlieko'];
+const productGroups = _uniq(heurekaData.map((hd) => hd.group));
 
 export default function ShopScreen() {
     const [text, setText] = useState(null);
     const [hidden, setHidden] = useState(true);
     const [items, setItems] = useState([]);
+    const [products, setProducts] = useState(productGroups);
+    const [searched, setSearched] = useState(false);
 
     const onTextType = (t) => {
         if (t.length > 2) {
+            const filteredProducts = products.filter((prodName) => prodName.startsWith(text));
             setHidden(false);
+            setProducts(filteredProducts);
         } else {
+            setProducts(productGroups);
             setHidden(true);
         }
         setText(t);
@@ -65,13 +74,28 @@ export default function ShopScreen() {
         setHidden(true);
     };
 
+    const calculateCheapestMerchants = () => {
+        const filteredProducts = heurekaData.filter((hd) =>
+            items.some((item) => item === hd.group)
+        );
+        const productByMerchant = _groupBy(filteredProducts, (fp) => fp.merchant);
+        const cheapests = Object.keys(productByMerchant)
+            .map((merchant) => {
+                const prods = productByMerchant[merchant];
+                const sum = _sumBy(prods, (p) => p.price);
+                return { merchant, sum };
+            })
+            .sort((a, b) => a.sum - b.sum);
+        return cheapests;
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.container2}>
                 <View style={{ flex: 1 }}>
                     <Autocomplete
                         hideResults={hidden}
-                        data={testData}
+                        data={products}
                         containerStyle={styles.autocompleteContainer}
                         renderItem={({ item, i }) => (
                             <TouchableOpacity key={i} onPress={() => addItem(item)}>
@@ -106,7 +130,7 @@ export default function ShopScreen() {
                         color={DefaultTheme.colors.primary}
                         size={40}
                         animated
-                        onPress={() => console.log('Pressed')}
+                        onPress={() => setSearched(true)}
                     />
                 </View>
                 <View style={styles.container4}>
@@ -116,6 +140,29 @@ export default function ShopScreen() {
                         </Chip>
                     ))}
                 </View>
+            </View>
+            <View>
+                {searched ? (
+                    <>
+                        <Title>Najlacnejší nákup</Title>
+                        <DataTable>
+                            <DataTable.Header>
+                                <DataTable.Title>Obchod</DataTable.Title>
+                                <DataTable.Title numeric>Cena</DataTable.Title>
+                            </DataTable.Header>
+                            {calculateCheapestMerchants()
+                                .slice(0, 5)
+                                .map((prod, index) => (
+                                    <DataTable.Row key={index}>
+                                        <DataTable.Cell>{prod.merchant}</DataTable.Cell>
+                                        <DataTable.Cell numeric>{`${(prod.sum / 100).toFixed(
+                                            2
+                                        )} €`}</DataTable.Cell>
+                                    </DataTable.Row>
+                                ))}
+                        </DataTable>
+                    </>
+                ) : null}
             </View>
         </View>
     );

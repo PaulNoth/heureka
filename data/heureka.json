@@ -1,0 +1,352 @@
+[
+	{
+		"id": 1,
+		"name": "chlieb1",
+		"group": "chlieb",
+		"merchant": "Tesco",
+		"price": 65
+	},
+	{
+		"id": 2,
+		"name": "chlieb2",
+		"group": "chlieb",
+		"merchant": "Kaufland",
+		"price": 78
+	},
+	{
+		"id": 3,
+		"name": "chlieb3",
+		"group": "chlieb",
+		"merchant": "Billa",
+		"price": 64
+	},
+	{
+		"id": 4,
+		"name": "chlieb4",
+		"group": "chlieb",
+		"merchant": "Delia",
+		"price": 39
+	},
+	{
+		"id": 5,
+		"name": "chlieb5",
+		"group": "chlieb",
+		"merchant": "Lidl",
+		"price": 83
+	},
+	{
+		"id": 6,
+		"name": "chlieb6",
+		"group": "chlieb",
+		"merchant": "Terno",
+		"price": 106
+	},
+	{
+		"id": 7,
+		"name": "chlieb7",
+		"group": "chlieb",
+		"merchant": "Jednota",
+		"price": 119
+	},
+	{
+		"id": 8,
+		"name": "mlieko1",
+		"group": "mlieko",
+		"merchant": "Tesco",
+		"price": 26
+	},
+	{
+		"id": 9,
+		"name": "mlieko2",
+		"group": "mlieko",
+		"merchant": "Kaufland",
+		"price": 85
+	},
+	{
+		"id": 10,
+		"name": "mlieko3",
+		"group": "mlieko",
+		"merchant": "Billa",
+		"price": 124
+	},
+	{
+		"id": 11,
+		"name": "mlieko4",
+		"group": "mlieko",
+		"merchant": "Terno",
+		"price": 171
+	},
+	{
+		"id": 12,
+		"name": "mlieko5",
+		"group": "mlieko",
+		"merchant": "Lidl",
+		"price": 40
+	},
+	{
+		"id": 13,
+		"name": "mlieko6",
+		"group": "mlieko",
+		"merchant": "Jednota",
+		"price": 119
+	},
+	{
+		"id": 14,
+		"name": "mlieko7",
+		"group": "mlieko",
+		"merchant": "Delia",
+		"price": 73
+	},
+	{
+		"id": 15,
+		"name": "mlieko8",
+		"group": "mlieko",
+		"merchant": "Tesco",
+		"price": 85
+	},
+	{
+		"id": 16,
+		"name": "mlieko9",
+		"group": "mlieko",
+		"merchant": "Tesco",
+		"price": 173
+	},
+	{
+		"id": 17,
+		"name": "mlieko10",
+		"group": "mlieko",
+		"merchant": "Tesco",
+		"price": 30
+	},
+	{
+		"id": 18,
+		"name": "vajcia1",
+		"group": "vajcia",
+		"merchant": "Tesco",
+		"price": 190
+	},
+	{
+		"id": 19,
+		"name": "vajcia2",
+		"group": "vajcia",
+		"merchant": "Kaufland",
+		"price": 65
+	},
+	{
+		"id": 20,
+		"name": "vajcia3",
+		"group": "vajcia",
+		"merchant": "Billa",
+		"price": 51
+	},
+	{
+		"id": 21,
+		"name": "vajcia4",
+		"group": "vajcia",
+		"merchant": "Terno",
+		"price": 128
+	},
+	{
+		"id": 22,
+		"name": "vajcia5",
+		"group": "vajcia",
+		"merchant": "Lidl",
+		"price": 124
+	},
+	{
+		"id": 23,
+		"name": "vajcia6",
+		"group": "vajcia",
+		"merchant": "Delia",
+		"price": 116
+	},
+	{
+		"id": 24,
+		"name": "vajcia7",
+		"group": "vajcia",
+		"merchant": "Jednota",
+		"price": 19
+	},
+	{
+		"id": 25,
+		"name": "jogurt1",
+		"group": "jogurt",
+		"merchant": "Tesco",
+		"price": 140
+	},
+	{
+		"id": 26,
+		"name": "jogurt2",
+		"group": "jogurt",
+		"merchant": "Kaufland",
+		"price": 16
+	},
+	{
+		"id": 27,
+		"name": "jogurt3",
+		"group": "jogurt",
+		"merchant": "Billa",
+		"price": 149
+	},
+	{
+		"id": 28,
+		"name": "jogurt4",
+		"group": "jogurt",
+		"merchant": "Delia",
+		"price": 67
+	},
+	{
+		"id": 29,
+		"name": "jogurt5",
+		"group": "jogurt",
+		"merchant": "Lidl",
+		"price": 250
+	},
+	{
+		"id": 30,
+		"name": "jogurt6",
+		"group": "jogurt",
+		"merchant": "Jednota",
+		"price": 126
+	},
+	{
+		"id": 31,
+		"name": "jogurt7",
+		"group": "jogurt",
+		"merchant": "Terno",
+		"price": 31
+	},
+	{
+		"id": 32,
+		"name": "jogurt8",
+		"group": "jogurt",
+		"merchant": "Tesco",
+		"price": 163
+	},
+	{
+		"id": 33,
+		"name": "dzus1",
+		"group": "dzus",
+		"merchant": "Tesco",
+		"price": 69
+	},
+	{
+		"id": 34,
+		"name": "dzus2",
+		"group": "dzus",
+		"merchant": "Kaufland",
+		"price": 708
+	},
+	{
+		"id": 35,
+		"name": "dzus3",
+		"group": "dzus",
+		"merchant": "Billa",
+		"price": 134
+	},
+	{
+		"id": 36,
+		"name": "dzus4",
+		"group": "dzus",
+		"merchant": "Terno",
+		"price": 89
+	},
+	{
+		"id": 37,
+		"name": "dzus5",
+		"group": "dzus",
+		"merchant": "Delia",
+		"price": 192
+	},
+	{
+		"id": 38,
+		"name": "dzus6",
+		"group": "dzus",
+		"merchant": "Lidl",
+		"price": 120
+	},
+	{
+		"id": 39,
+		"name": "dzus7",
+		"group": "dzus",
+		"merchant": "Jednota",
+		"price": 66
+	},
+	{
+		"id": 40,
+		"name": "dzus8",
+		"group": "dzus",
+		"merchant": "Tesco",
+		"price": 138
+	},
+	{
+		"id": 41,
+		"name": "dzus9",
+		"group": "dzus",
+		"merchant": "Tesco",
+		"price": 39
+	},
+	{
+		"id": 42,
+		"name": "dzus10",
+		"group": "dzus",
+		"merchant": "Tesco",
+		"price": 169
+	},
+	{
+		"id": 43,
+		"name": "dzus11",
+		"group": "dzus",
+		"merchant": "Tesco",
+		"price": 175
+	},
+	{
+		"id": 44,
+		"name": "mineralka1",
+		"group": "mineralka",
+		"merchant": "Tesco",
+		"price": 136
+	},
+	{
+		"id": 45,
+		"name": "mineralka2",
+		"group": "mineralka",
+		"merchant": "Kaufland",
+		"price": 195
+	},
+	{
+		"id": 46,
+		"name": "mineralka3",
+		"group": "mineralka",
+		"merchant": "Billa",
+		"price": 129
+	},
+	{
+		"id": 47,
+		"name": "mineralka4",
+		"group": "mineralka",
+		"merchant": "Terno",
+		"price": 174
+	},
+	{
+		"id": 48,
+		"name": "mineralka5",
+		"group": "mineralka",
+		"merchant": "Delia",
+		"price": 94
+	},
+	{
+		"id": 49,
+		"name": "mineralka6",
+		"group": "mineralka",
+		"merchant": "Lidl",
+		"price": 152
+	},
+	{
+		"id": 50,
+		"name": "mineralka7",
+		"group": "mineralka",
+		"merchant": "Jednota",
+		"price": 55
+	}
+]

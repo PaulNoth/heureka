@@ -1,5 +1,7 @@
-import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import * as Location from 'expo-location';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { Snackbar, Portal } from 'react-native-paper';
 
 import gps from '../data/gps.json';
 
@@ -11,11 +13,31 @@ const styles = StyleSheet.create({
     },
 });
 
+const myPos = {
+    lat: 48.1537104,
+    lon: 17.0859003,
+};
 export default function DisplayDistance({ merchant }) {
-    const myPos = {
-        lat: 48.1537104,
-        lon: 17.0859003,
-    };
+    const [position, setPosition] = useState({ lat: 0, lon: 0 });
+    const [errorMsg, setErrorMsg] = useState(null);
+
+    useEffect(() => {
+        (async () => {
+            const { status } = await Location.requestPermissionsAsync();
+            if (status !== 'granted') {
+                setErrorMsg('Permission to access location was denied');
+            }
+
+            try {
+                const location = await Location.getCurrentPositionAsync();
+
+                setPosition({ lat: location.latitude, lon: location.longitude });
+            } catch (e) {
+                setErrorMsg('Problem so ziskanim GPS polohy');
+                setPosition(myPos);
+            }
+        })();
+    });
 
     const degreesToRadians = (degrees) => {
         return (degrees * Math.PI) / 180;
@@ -38,11 +60,14 @@ export default function DisplayDistance({ merchant }) {
     };
 
     return (
+        // <>
         <Text style={styles.distanceText}>{`${distanceInKmBetweenEarthCoordinates(
-            myPos.lat,
-            myPos.lon,
+            position.lat,
+            position.lon,
             gps[merchant].lat,
             gps[merchant].lon
         ).toFixed(2)} km`}</Text>
+        // <Snackbar visible="true">{errorMsg}</Snackbar>
+        // </>
     );
 }

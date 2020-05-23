@@ -5,6 +5,7 @@ import Autocomplete from 'react-native-autocomplete-input';
 import { TextInput, IconButton, DefaultTheme, Divider, DataTable, Title } from 'react-native-paper';
 
 import heurekaData from '../data/heureka.json';
+import DisplayDistance from './DisplayDistance';
 
 const styles = StyleSheet.create({
     container: {
@@ -101,6 +102,7 @@ export default function ShopScreen() {
                         <DataTable>
                             <DataTable.Header>
                                 <DataTable.Title>Obchod</DataTable.Title>
+                                <DataTable.Title>Vzdialenosť</DataTable.Title>
                                 <DataTable.Title>Názov</DataTable.Title>
                                 <DataTable.Title numeric>Cena</DataTable.Title>
                             </DataTable.Header>
@@ -109,6 +111,9 @@ export default function ShopScreen() {
                                 .map((prod, index) => (
                                     <DataTable.Row key={index}>
                                         <DataTable.Cell>{prod.merchant}</DataTable.Cell>
+                                        <DataTable.Cell>
+                                            <DisplayDistance merchant={prod.merchant} />
+                                        </DataTable.Cell>
                                         <DataTable.Cell>{prod.name}</DataTable.Cell>
                                         <DataTable.Cell numeric>{`${(prod.price / 100).toFixed(
                                             2

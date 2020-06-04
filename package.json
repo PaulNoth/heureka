@@ -6,6 +6,10 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
+    "test": "jest --colors",
+    "test:watch": "jest --watch --colors --coverage=false",
+    "test:debug": "jest -o --watch --colors --coverage=false",
+    "test:updateSnapshots": "jest -u --colors --coverage=false",
     "lint": "eslint ./src --ext .js --ext .jsx --color",
     "lint:fix": "eslint ./src --ext .js --ext .jsx --color --fix",
     "lint:watch": "esw -w --color --ext .js --ext .jsx ./src"
@@ -26,6 +30,7 @@
     "@babel/core": "^7.8.6",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
+    "babel-jest": "^25.5.1",
     "babel-preset-expo": "~8.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
@@ -35,7 +40,11 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.1",
     "eslint-watch": "^6.0.1",
+    "jest": "^25.5.4",
+    "jest-expo": "^37.0.0",
     "prettier": "^2.0.5",
+    "react-native-testing-library": "^1.13.2",
+    "react-test-renderer": "^16.13.1",
     "typescript": "^3.8.3"
   },
   "private": true

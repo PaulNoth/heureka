@@ -123,7 +123,7 @@ export default function ShopScreen() {
                     color={DefaultTheme.colors.primary}
                     size={40}
                     animated
-                    onPress={() => console.log('Pressed')}
+                    onPress={() => console.log('Pressed')}  // eslint-disable-line
                 />
             </View>
             <View style={styles.container3}>
@@ -139,6 +139,7 @@ export default function ShopScreen() {
                 </View>
                 <View style={styles.container4}>
                     {items.map((item, i) => (
+                        // eslint-disable-next-line react/no-array-index-key
                         <Chip key={i} mode="outlined" onClose={() => removeItem(item)}>
                             {item}
                         </Chip>
@@ -158,6 +159,7 @@ export default function ShopScreen() {
                             {calculateCheapestMerchants()
                                 .slice(0, 5)
                                 .map((prod, index) => (
+                                    // eslint-disable-next-line react/no-array-index-key
                                     <DataTable.Row key={index}>
                                         <DataTable.Cell>{prod.merchant}</DataTable.Cell>
                                         <DataTable.Cell>

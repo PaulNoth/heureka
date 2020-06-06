@@ -1,7 +1,7 @@
 import * as Location from 'expo-location';
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { Snackbar, Portal } from 'react-native-paper';
+import { View, Text, StyleSheet } from 'react-native';  // eslint-disable-line
+import { Snackbar, Portal } from 'react-native-paper';  // eslint-disable-line
 
 import gps from '../data/gps.json';
 
@@ -17,9 +17,10 @@ const myPos = {
     lat: 48.1537104,
     lon: 17.0859003,
 };
-export default function DisplayDistance({ merchant }) {
+
+export default function DisplayDistance({ merchant }) { // eslint-disable-line
     const [position, setPosition] = useState({ lat: 0, lon: 0 });
-    const [errorMsg, setErrorMsg] = useState(null);
+    const [errorMsg, setErrorMsg] = useState(null); // eslint-disable-line
 
     useEffect(() => {
         (async () => {

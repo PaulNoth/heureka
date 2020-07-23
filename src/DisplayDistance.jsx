@@ -31,7 +31,7 @@ export default function DisplayDistance({ merchant }) {
             try {
                 const location = await Location.getCurrentPositionAsync();
 
-                setPosition({ lat: location.latitude, lon: location.longitude });
+                setPosition({ lat: location.coords.latitude, lon: location.coords.longitude });
             } catch (e) {
                 setErrorMsg('Problem so ziskanim GPS polohy');
                 setPosition(myPos);
